@@ -1,0 +1,359 @@
+/* --- Google Fonts Import --- */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap');
+
+/* --- CSS Variables for Theming --- */
+:root {
+    --bg-color: #0d1117; /* GitHub Dark-like background */
+    --primary-text: #e6f1ff; /* A slightly brighter off-white */
+    --accent-color: #00f5c3; /* A vibrant neon green/cyan */
+    --accent-glow: 0 0 12px rgba(0, 245, 195, 0.8);
+    --card-bg: #161b22;
+    --border-color: #30363d;
+    --header-font: 'Orbitron', sans-serif;
+    --body-font: 'Roboto Mono', monospace;
+    --nav-height: 70px;
+}
+
+/* --- Global Styles & Resets --- */
+html {
+    scroll-behavior: smooth;
+    /* Add padding to the top to offset the fixed navigation bar when jumping to an anchor */
+    scroll-padding-top: var(--nav-height); 
+}
+
+body {
+    font-family: var(--body-font);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--primary-text);
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    position: relative; /* Needed for the background pseudo-element */
+}
+
+/* --- Animated Grid Background --- */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: 
+        linear-gradient(to right, rgba(48, 54, 61, 0.5) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(48, 54, 61, 0.5) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: -1; /* Place it behind all content */
+    animation: pan-grid 60s linear infinite;
+    will-change: background-position;
+}
+
+@keyframes pan-grid {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 400px 400px;
+    }
+}
+
+/* --- Main Content Container --- */
+.container {
+    max-width: 960px;
+    margin: 0 auto; /* Center the container */
+    padding: 20px;
+}
+
+/* --- Navigation Bar --- */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(13, 17, 23, 0.85); /* Slightly transparent dark background */
+    backdrop-filter: blur(10px); /* Frosted glass effect for modern browsers */
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+    height: var(--nav-height);
+    box-sizing: border-box;
+}
+
+nav a {
+    color: var(--primary-text);
+    text-decoration: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    position: relative; /* For the underline animation */
+    transition: color 0.3s ease;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--accent-color);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+nav a:hover, nav a.active {
+    color: var(--accent-color);
+    text-shadow: var(--accent-glow);
+}
+
+nav a:hover::after, nav a.active::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* --- Header (Hero Section) --- */
+header#home {
+    text-align: center;
+    min-height: 80vh; /* Make the hero section take up most of the viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --- About Me Section Layout --- */
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.about-text {
+    flex: 2; /* Takes up 2/3 of the space */
+}
+
+.about-image {
+    flex: 1; /* Takes up 1/3 of the space */
+    text-align: center;
+}
+
+.about-image img {
+    max-width: 100%;
+    border-radius: 50%;
+    border: 3px solid var(--border-color);
+}
+
+/* --- General Section Styling --- */
+section {
+    padding: 80px 0; /* Increased vertical spacing */
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* --- Typography --- */
+h1, h2, h3 {
+    font-family: var(--header-font);
+    color: var(--accent-color);
+    text-shadow: 0 0 5px rgba(88, 166, 255, 0.5);
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* --- Skills Section Layout --- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.skill-category h3 {
+    color: var(--primary-text);
+    font-family: var(--header-font);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 8px;
+}
+
+.skill-category h3 i {
+    font-size: 1.1em;
+    margin-right: 10px;
+    vertical-align: -2px;
+    color: var(--accent-color);
+    text-shadow: var(--accent-glow);
+}
+
+/* --- Skills List --- */
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul li {
+    background: var(--card-bg);
+    padding: 10px;
+    margin-bottom: 8px;
+    border-left: 4px solid var(--accent-color);
+    border-radius: 4px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+ul li:hover {
+    transform: translateX(5px);
+    box-shadow: 0 0 15px rgba(88, 166, 255, 0.2);
+}
+
+/* --- Projects Section --- */
+.project {
+    background: var(--card-bg);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 15px;
+    text-decoration: none;
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.project-link:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+}
+
+.project h3 {
+    margin-top: 0;
+}
+
+.project h3 i {
+    font-size: 1.1em;
+    margin-right: 10px;
+    vertical-align: -2px;
+    color: var(--accent-color);
+}
+
+/* --- Contact Form & Buttons --- */
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#contact-form input,
+#contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background-color: var(--bg-color);
+    color: var(--primary-text);
+    font-size: 1rem;
+    font-family: var(--body-font);
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: var(--accent-glow);
+}
+
+#contact-form button {
+    padding: 12px 20px;
+    border: 2px solid var(--accent-color);
+    border-radius: 5px;
+    background-color: transparent;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+#contact-form button:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    box-shadow: var(--accent-glow);
+    transform: translateY(-2px); /* Subtle lift effect */
+}
+
+/* --- Responsive Layout --- */
+@media (max-width: 768px) {
+    body {
+        padding: 0;
+    }
+    .container {
+        padding: 15px;
+    }
+    h1 {
+        font-size: 2.5rem;
+    }
+    nav {
+        justify-content: space-around;
+        padding: 10px 0;
+    }
+    nav a {
+        padding: 10px 5px;
+        font-size: 0.9rem;
+    }
+    .about-content {
+        flex-direction: column-reverse; /* Stack image on top of text on mobile */
+    }
+    .about-image img {
+        max-width: 200px; /* Make image smaller on mobile */
+    }
+    .skills-grid {
+        grid-template-columns: 1fr; /* Stack skill categories on mobile */
+    }
+}
+
+/* --- Typing Animation Cursor --- */
+h2 .cursor {
+    display: inline-block;
+    background-color: var(--accent-color);
+    margin-left: 4px;
+    width: 4px;
+    animation: blink 1s infinite;
+    box-shadow: var(--accent-glow);
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+/* --- Fade-in on Scroll Animation --- */
+section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}

@@ -1,0 +1,93 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <!-- Icon Library (Boxicons) -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="container">
+        <header id="home">
+            <h1>Sam Me</h1>
+            <h2>Cybersecurity & Network Engineering Student</h2>
+        </header>
+
+        <main>
+            <section id="about">
+                <h2>About Me</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Hello! I'm a passionate and driven cybersecurity student with a strong interest in network security, ethical hacking, and building secure systems. My goal is to leverage my skills to protect digital assets and contribute to a safer online environment.</p>
+                        <p>I enjoy the challenge of dissecting complex systems, identifying vulnerabilities, and architecting robust defenses. I'm constantly learning and exploring new technologies in the ever-evolving world of cybersecurity.</p>
+                    </div>
+                    <div class="about-image">
+                        <!-- Placeholder for a professional headshot -->
+                        <img src="https://via.placeholder.com/250" alt="A placeholder image for a profile picture">
+                    </div>
+                </div>
+            </section>
+
+            <section id="skills">
+                <h2>Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3><i class='bx bx-shield-quarter'></i> Cybersecurity</h3>
+                        <ul>
+                            <li>Network Security & Firewalls</li>
+                            <li>Penetration Testing (Ethical Hacking)</li>
+                            <li>SIEM & Log Analysis</li>
+                            <li>Vulnerability Assessment</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3><i class='bx bx-code-alt'></i> Programming & Tools</h3>
+                        <ul>
+                            <li>Python (Scapy, Nornir)</li>
+                            <li>JavaScript, HTML/CSS</li>
+                            <li>Bash Scripting</li>
+                            <li>Git, Wireshark, Nmap, Metasploit</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projects">
+                <h2>Projects</h2>
+                <div class="project">
+                    <h3><i class='bx bx-radio-circle-marked'></i> Network Traffic Analyzer</h3>
+                    <p>A network traffic analyzer built with Python and Scapy to detect and flag suspicious network activity in real-time. This project involved deep packet inspection and pattern matching.</p>
+                    <a href="#" target="_blank" class="project-link">View on GitHub</a>
+                </div>
+                <div class="project">
+                    <h3><i class='bx bx-server'></i> Secure Web Application</h3>
+                    <p>Developed a full-stack web application with a focus on security, implementing measures against common vulnerabilities like XSS, CSRF, and SQL injection.</p>
+                    <a href="#" target="_blank" class="project-link">View on GitHub</a>
+                </div>
+            </section>
+
+            <section id="contact">
+                <h2>Contact</h2>
+                <form id="contact-form">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
