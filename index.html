@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sam Me - Cybersecurity & Network Engineering Portfolio. Ethical Hacker, Security Engineer, and Network Specialist.">
+    <meta name="keywords" content="cybersecurity, network engineering, ethical hacking, penetration testing, security engineer">
+    <meta name="author" content="Sam Me">
+    <title>Sam Me | Cybersecurity Engineer</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Boxicons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Particle Background Canvas -->
+    <canvas id="particles-canvas"></canvas>
+    
+    <!-- Cursor Effects -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <span class="logo-bracket">&lt;</span>
+                <span class="logo-text">Sam</span>
+                <span class="logo-slash">/</span>
+                <span class="logo-bracket">&gt;</span>
+            </a>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="#home" class="nav-link active" data-text="Home">Home</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link" data-text="About">About</a></li>
+                <li class="nav-item"><a href="#skills" class="nav-link" data-text="Skills">Skills</a></li>
+                <li class="nav-item"><a href="#projects" class="nav-link" data-text="Projects">Projects</a></li>
+                <li class="nav-item"><a href="#certifications" class="nav-link" data-text="Certs">Certs</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link" data-text="Contact">Contact</a></li>
+            </ul>
+            
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <span class="badge-dot"></span>
+                        <span>Available for opportunities</span>
+                    </div>
+                    
+                    <h1 class="hero-title">
+                        <span class="title-line">Hi, I'm</span>
+                        <span class="title-name glitch" data-text="Sam Me">Sam Me</span>
+                    </h1>
+                    
+                    <div class="hero-subtitle">
+                        <span class="subtitle-prefix">&gt;&gt;</span>
+                        <span class="typing-text" id="typing-text"></span>
+                        <span class="cursor-blink">|</span>
+                    </div>
+                    
+                    <p class="hero-description">
+                        Passionate about securing digital infrastructure, hunting vulnerabilities, 
+                        and building robust defense systems. Currently pursuing excellence in 
+                        cybersecurity and network engineering.
+                    </p>
+                    
+                    <div class="hero-cta">
+                        <a href="#projects" class="btn btn-primary">
+                            <span>View My Work</span>
+                            <i class='bx bx-right-arrow-alt'></i>
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <span>Get In Touch</span>
+                            <i class='bx bx-envelope'></i>
+                        </a>
+                    </div>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="15">0</span>
+                            <span class="stat-label">Projects Completed</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="5">0</span>
+                            <span class="stat-label">Certifications</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="100">0</span>
+                            <span class="stat-label">CTF Challenges</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-visual">
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="terminal-buttons">
+                                <span class="terminal-btn red"></span>
+                                <span class="terminal-btn yellow"></span>
+                                <span class="terminal-btn green"></span>
+                            </div>
+                            <span class="terminal-title">root@security:~</span>
+                        </div>
+                        <div class="terminal-body" id="terminal-output">
+                            <div class="terminal-line">
+                                <span class="prompt">$</span>
+                                <span class="command">whoami</span>
+                            </div>
+                            <div class="terminal-line output">sam_me</div>
+                            <div class="terminal-line">
+                                <span class="prompt">$</span>
+                                <span class="command">cat skills.txt</span>
+                            </div>
+                            <div class="terminal-line output">[+] Penetration Testing</div>
+                            <div class="terminal-line output">[+] Network Security</div>
+                            <div class="terminal-line output">[+] Python Scripting</div>
+                            <div class="terminal-line output">[+] Threat Analysis</div>
+                            <div class="terminal-line">
+                                <span class="prompt">$</span>
+                                <span class="command typing-cmd">nmap -sV target.com</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="floating-icons">
+                        <div class="floating-icon" style="--delay: 0s;"><i class='bx bx-shield-quarter'></i></div>
+                        <div class="floating-icon" style="--delay: 1s;"><i class='bx bx-code-curly'></i></div>
+                        <div class="floating-icon" style="--delay: 2s;"><i class='bx bx-terminal'></i></div>
+                        <div class="floating-icon" style="--delay: 3s;"><i class='bx bx-lock-alt'></i></div>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="#about" class="scroll-indicator">
+                <span>Scroll Down</span>
+                <i class='bx bx-chevron-down'></i>
+            </a>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section about-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-tag">&lt;about&gt;</span>
+                    <h2 class="section-title">About Me</h2>
+                    <div class="section-line"></div>
+                </div>
+                
+                <div class="about-grid">
+                    <div class="about-image-container">
+                        <div class="about-image-wrapper">
+                            <div class="image-frame">
+                                <div class="frame-corner top-left"></div>
+                                <div class="frame-corner top-right"></div>
+                                <div class="frame-corner bottom-left"></div>
+                                <div class="frame-corner bottom-right"></div>
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" 
+                                     alt="Sam Me - Cybersecurity Professional" 
+                                     class="about-image">
+                                <div class="image-overlay"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="about-badges">
+                            <div class="badge-card">
+                                <i class='bx bx-trophy'></i>
+                                <span>CTF Player</span>
+                            </div>
+                            <div class="badge-card">
+                                <i class='bx bx-shield-x'></i>
+                                <span>Bug Hunter</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about-content">
+                        <div class="about-intro">
+                            <p class="intro-text">
+                                Hello! I'm a <span class="highlight">cybersecurity enthusiast</span> and 
+                                <span class="highlight">network engineering student</span> with a burning passion 
+                                for protecting digital infrastructure and uncovering security vulnerabilities.
+                            </p>
+                        </div>
+                        
+                        <div class="about-details">
+                            <p>
+                                My journey in cybersecurity began with curiosity about how systems can be compromised 
+                                and evolved into a dedicated pursuit of ethical hacking and security research. I spend 
+                                my time participating in CTF competitions, contributing to open-source security tools, 
+                                and staying ahead of emerging threats.
+                            </p>
+                            <p>
+                                I believe in the philosophy of "think like an attacker to defend like a professional." 
+                                This mindset drives me to continuously explore new attack vectors while building 
+                                robust defense mechanisms.
+                            </p>
+                        </div>
+                        
+                        <div class="about-info-grid">
+                            <div class="info-item">
+                                <span class="info-label">Name:</span>
+                                <span class="info-value">Sam Me</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Email:</span>
+                                <span class="info-value">contact@example.com</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Location:</span>
+                                <span class="info-value">Available Worldwide</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Specialization:</span>
+                                <span class="info-value">Network Security</span>
+                            </div>
+                        </div>
+                        
+                        <a href="#contact" class="btn btn-primary">
+                            <span>Let's Work Together</span>
+                            <i class='bx bx-right-arrow-alt'></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <span class="section-tag section-tag-end">&lt;/about&gt;</span>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section skills-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-tag">&lt;skills&gt;</span>
+                    <h2 class="section-title">Technical Arsenal</h2>
+                    <div class="section-line"></div>
+                </div>
+                
+                <div class="skills-wrapper">
+                    <!-- Skill Category Cards -->
+                    <div class="skills-categories">
+                        <div class="skill-card" data-aos="fade-up">
+                            <div class="skill-card-header">
+                                <div class="skill-icon">
+                                    <i class='bx bx-shield-quarter'></i>
+                                </div>
+                                <h3>Cybersecurity</h3>
+                            </div>
+                            <div class="skill-card-body">
+                                <div class="skill-item">
+                                    <span class="skill-name">Penetration Testing</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="90"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">Network Security</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="85"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">Vulnerability Assessment</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="88"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">SIEM & Log Analysis</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="80"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">Incident Response</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="75"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+                            <div class="skill-card-header">
+                                <div class="skill-icon">
+                                    <i class='bx bx-code-alt'></i>
+                                </div>
+                                <h3>Programming</h3>
+                            </div>
+                            <div class="skill-card-body">
+                                <div class="skill-item">
+                                    <span class="skill-name">Python</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="92"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">Bash Scripting</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="88"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">JavaScript</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="78"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">C/C++</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="70"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">SQL</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="82"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
+                            <div class="skill-card-header">
+                                <div class="skill-icon">
+                                    <i class='bx bx-wrench'></i>
+                                </div>
+                                <h3>Tools & Platforms</h3>
+                            </div>
+                            <div class="skill-card-body">
+                                <div class="tools-grid">
+                                    <div class="tool-item">
+                                        <i class='bx bx-terminal'></i>
+                                        <span>Kali Linux</span>
+                                    </div>
+                                    <div class="tool-item">
+                                        <i class='bx bx-radar'></i>
+                                        <span>Nmap</span>
+                                    </div>
+                                    <div class="tool-item">
+                                        <i class='bx bx-bug'></i>
+                                        <span>Metasploit</span>
+                                    </div>
+                                    <div class="tool-item">
+                                        <i class='bx bx-analyse'></i>
+                                        <span>Wireshark</span>
+                                    </div>
+                                    <div class="tool-item">
+                                        <i class='bx bx-git-branch'></i>
+                                        <span>Git</span>
+                                    </div>
+                                    <div class="tool-item">
+                                        <i class='bx bx-cloud'></i>
+                                        <span>AWS</span>
+                                    </div>
+                                    <div class="tool-item">
+                                        <i class='bx bx-cube'></i>
+                                        <span>Docker</span>
+                                    </div>
+                                    <div class="tool-item">
+                                        <i class='bx bx-shield'></i>
+                                        <span>Burp Suite</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <span class="section-tag section-tag-end">&lt;/skills&gt;</span>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section projects-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-tag">&lt;projects&gt;</span>
+                    <h2 class="section-title">Featured Projects</h2>
+                    <div class="section-line"></div>
+                </div>
+                
+                <div class="projects-filter">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="security">Security</button>
+                    <button class="filter-btn" data-filter="network">Network</button>
+                    <button class="filter-btn" data-filter="development">Development</button>
+                </div>
+                
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <article class="project-card" data-category="security">
+                        <div class="project-image">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link-btn" title="View Demo">
+                                        <i class='bx bx-link-external'></i>
+                                    </a>
+                                    <a href="#" class="project-link-btn" title="View Code">
+                                        <i class='bx bxl-github'></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="project-placeholder">
+                                <i class='bx bx-radar'></i>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">Scapy</span>
+                                <span class="tag">Security</span>
+                            </div>
+                            <h3 class="project-title">Network Traffic Analyzer</h3>
+                            <p class="project-description">
+                                Real-time network traffic analyzer using deep packet inspection to detect 
+                                and flag suspicious activity. Features pattern matching and anomaly detection.
+                            </p>
+                            <div class="project-stats">
+                                <span><i class='bx bx-star'></i> 128</span>
+                                <span><i class='bx bx-git-repo-forked'></i> 45</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Project 2 -->
+                    <article class="project-card" data-category="development">
+                        <div class="project-image">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link-btn" title="View Demo">
+                                        <i class='bx bx-link-external'></i>
+                                    </a>
+                                    <a href="#" class="project-link-btn" title="View Code">
+                                        <i class='bx bxl-github'></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="project-placeholder">
+                                <i class='bx bx-lock-alt'></i>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tags">
+                                <span class="tag">Node.js</span>
+                                <span class="tag">React</span>
+                                <span class="tag">Security</span>
+                            </div>
+                            <h3 class="project-title">Secure Web Application</h3>
+                            <p class="project-description">
+                                Full-stack web application with robust security measures against XSS, 
+                                CSRF, SQL injection, and other OWASP Top 10 vulnerabilities.
+                            </p>
+                            <div class="project-stats">
+                                <span><i class='bx bx-star'></i> 89</span>
+                                <span><i class='bx bx-git-repo-forked'></i> 32</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Project 3 -->
+                    <article class="project-card" data-category="security">
+                        <div class="project-image">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link-btn" title="View Demo">
+                                        <i class='bx bx-link-external'></i>
+                                    </a>
+                                    <a href="#" class="project-link-btn" title="View Code">
+                                        <i class='bx bxl-github'></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="project-placeholder">
+                                <i class='bx bx-scan'></i>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">Automation</span>
+                                <span class="tag">Scanning</span>
+                            </div>
+                            <h3 class="project-title">Vulnerability Scanner</h3>
+                            <p class="project-description">
+                                Automated vulnerability scanner that identifies common security 
+                                weaknesses in web applications and generates detailed reports.
+                            </p>
+                            <div class="project-stats">
+                                <span><i class='bx bx-star'></i> 156</span>
+                                <span><i class='bx bx-git-repo-forked'></i> 67</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Project 4 -->
+                    <article class="project-card" data-category="network">
+                        <div class="project-image">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link-btn" title="View Demo">
+                                        <i class='bx bx-link-external'></i>
+                                    </a>
+                                    <a href="#" class="project-link-btn" title="View Code">
+                                        <i class='bx bxl-github'></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="project-placeholder">
+                                <i class='bx bx-network-chart'></i>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">Nornir</span>
+                                <span class="tag">Automation</span>
+                            </div>
+                            <h3 class="project-title">Network Automation Suite</h3>
+                            <p class="project-description">
+                                Comprehensive network automation framework for configuration management, 
+                                backup, and compliance checking across multi-vendor environments.
+                            </p>
+                            <div class="project-stats">
+                                <span><i class='bx bx-star'></i> 203</span>
+                                <span><i class='bx bx-git-repo-forked'></i> 91</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                
+                <div class="projects-cta">
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                        <span>View All Projects</span>
+                        <i class='bx bxl-github'></i>
+                    </a>
+                </div>
+                
+                <span class="section-tag section-tag-end">&lt;/projects&gt;</span>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="section certifications-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-tag">&lt;certifications&gt;</span>
+                    <h2 class="section-title">Certifications</h2>
+                    <div class="section-line"></div>
+                </div>
+                
+                <div class="certifications-grid">
+                    <div class="cert-card">
+                        <div class="cert-icon">
+                            <i class='bx bx-certification'></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3>CompTIA Security+</h3>
+                            <p class="cert-issuer">CompTIA</p>
+                            <p class="cert-date">Expected 2024</p>
+                        </div>
+                        <div class="cert-badge in-progress">In Progress</div>
+                    </div>
+                    
+                    <div class="cert-card">
+                        <div class="cert-icon">
+                            <i class='bx bx-shield-quarter'></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3>CEH - Certified Ethical Hacker</h3>
+                            <p class="cert-issuer">EC-Council</p>
+                            <p class="cert-date">Expected 2024</p>
+                        </div>
+                        <div class="cert-badge in-progress">In Progress</div>
+                    </div>
+                    
+                    <div class="cert-card">
+                        <div class="cert-icon">
+                            <i class='bx bx-network-chart'></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3>CCNA - Cisco Certified</h3>
+                            <p class="cert-issuer">Cisco</p>
+                            <p class="cert-date">Expected 2024</p>
+                        </div>
+                        <div class="cert-badge in-progress">In Progress</div>
+                    </div>
+                    
+                    <div class="cert-card">
+                        <div class="cert-icon">
+                            <i class='bx bx-cloud'></i>
+                        </div>
+                        <div class="cert-content">
+                            <h3>AWS Cloud Practitioner</h3>
+                            <p class="cert-issuer">Amazon Web Services</p>
+                            <p class="cert-date">2023</p>
+                        </div>
+                        <div class="cert-badge completed">Completed</div>
+                    </div>
+                </div>
+                
+                <span class="section-tag section-tag-end">&lt;/certifications&gt;</span>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section contact-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-tag">&lt;contact&gt;</span>
+                    <h2 class="section-title">Get In Touch</h2>
+                    <div class="section-line"></div>
+                    <p class="section-subtitle">
+                        Have a project in mind or want to collaborate? Feel free to reach out!
+                    </p>
+                </div>
+                
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class='bx bx-envelope'></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Email</h4>
+                                <a href="mailto:contact@example.com">contact@example.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class='bx bx-map'></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Location</h4>
+                                <p>Available Worldwide (Remote)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class='bx bx-time'></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Response Time</h4>
+                                <p>Within 24 hours</p>
+                            </div>
+                        </div>
+                        
+                        <div class="social-links">
+                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub">
+                                <i class='bx bxl-github'></i>
+                            </a>
+                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn">
+                                <i class='bx bxl-linkedin'></i>
+                            </a>
+                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-link" title="Twitter">
+                                <i class='bx bxl-twitter'></i>
+                            </a>
+                            <a href="#" class="social-link" title="Discord">
+                                <i class='bx bxl-discord-alt'></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <form class="contact-form" id="contact-form" action="https://formspree.io/f/xrbyaadd" method="POST">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <div class="input-wrapper">
+                                <i class='bx bx-user'></i>
+                                <input type="text" id="name" name="name" placeholder="John Doe" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <div class="input-wrapper">
+                                <i class='bx bx-envelope'></i>
+                                <input type="email" id="email" name="_replyto" placeholder="john@example.com" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <div class="input-wrapper">
+                                <i class='bx bx-edit'></i>
+                                <input type="text" id="subject" name="subject" placeholder="Project Inquiry" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <div class="input-wrapper textarea-wrapper">
+                                <i class='bx bx-message-detail'></i>
+                                <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-submit">
+                            <span>Send Message</span>
+                            <i class='bx bx-send'></i>
+                        </button>
+                    </form>
+                </div>
+                
+                <span class="section-tag section-tag-end">&lt;/contact&gt;</span>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-bracket">&lt;</span>
+                    <span class="logo-text">Sam</span>
+                    <span class="logo-slash">/</span>
+                    <span class="logo-bracket">&gt;</span>
+                </div>
+                
+                <p class="footer-text">
+                    Securing the digital world, one vulnerability at a time.
+                </p>
+                
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year">2024</span> Sam Me. All rights reserved.</p>
+                <p class="footer-credit">Built with passion and caffeine</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <i class='bx bx-chevron-up'></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
