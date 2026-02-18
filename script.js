@@ -276,7 +276,8 @@ function initTypingAnimation() {
         'Cybersecurity Student',
         'Ethical Hacker',
         'Network Engineer',
-        'Security Researcher',
+        'Mobile Security Analyst',
+        'Python Developer',
         'CTF Player'
     ];
 
